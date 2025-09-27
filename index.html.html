@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>InternLink - Home Page</title>
+        <style>
+            body{
+                display: flex;
+                text-align: center;
+                background-color: white;
+                justify-content: center;
+                align-items: center;
+            }
+            img{
+                display: flex;
+                align-items: center;
+                height: 225px;
+                width: 240px;
+                animation: blink 1s infinite
+            }
+            @keyframes blink {
+                0% { opacity: 1; }
+                50% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+        </style>
+        <script>
+            function onLoadImage(){
+                setTimeout(()=> {window.location.href = "Login-signup.html";},3000);
+            }
+        </script>
+    </head>
+    <body>
+        <img src="InternLink_logo.jpg" onload="onLoadImage()">
+
+        <!-- Firebase Integration -->
+        <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+        <script>
+            // --- Firebase Config ---
+            const firebaseConfig = {
+              apiKey: "AIzaSyBCGGeypdVLUnkjDV2p4kHuXB2pG5O6ZyM",
+              authDomain: "smart-finance-bot-cc0ed.firebaseapp.com",
+              projectId: "smart-finance-bot-cc0ed",
+              storageBucket: "smart-finance-bot-cc0ed.appspot.com",
+              messagingSenderId: "626989165311",
+              appId: "1:626989165311:web:3bfad465c9decdebabfaca",
+              measurementId: "G-E6V0D1W0XM"
+            };
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+        </script>
+    </body>
+</html>
